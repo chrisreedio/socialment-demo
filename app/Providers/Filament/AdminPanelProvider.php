@@ -51,6 +51,9 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
+			->plugins([
+				\ChrisReedIO\Socialment\SocialmentPlugin::make(),
+			])
             ->authMiddleware([
                 Authenticate::class,
             ]);
