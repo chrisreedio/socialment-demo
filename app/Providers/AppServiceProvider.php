@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use ChrisReedIO\Socialment\Facades\Socialment;
+use ChrisReedIO\Socialment\Models\ConnectedAccount;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Socialment::postLogin(function (ConnectedAccount $connectedAccount) {
+			// Handle custom post login logic here.
+		});
     }
 }
